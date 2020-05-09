@@ -1,0 +1,3 @@
+com/liutao/hystrix/HelloRemoteApiHystrix.class
+com/liutao/FeignApp.class
+com/liutao/api/HelloRemoteApi.class

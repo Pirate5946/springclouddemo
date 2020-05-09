@@ -1,0 +1,3 @@
+/Users/apple/apps/demo/springclouddemo/springcloud-feign-client/src/main/java/com/liutao/FeignApp.java
+/Users/apple/apps/demo/springclouddemo/springcloud-feign-client/src/main/java/com/liutao/api/HelloRemoteApi.java
+/Users/apple/apps/demo/springclouddemo/springcloud-feign-client/src/main/java/com/liutao/hystrix/HelloRemoteApiHystrix.java
