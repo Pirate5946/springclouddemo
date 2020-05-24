@@ -28,7 +28,8 @@ public class Send implements RabbitTemplate.ConfirmCallback {
     @Autowired
     public Send(RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
-        rabbitTemplate.setConfirmCallback(this); //rabbitTemplate如果为单例的话，那回调就是最后设置的内容
+        //rabbitTemplate如果为单例的话，那回调就是最后设置的内容
+        rabbitTemplate.setConfirmCallback(this);
     }
 
     public void sendMsg(String content) {

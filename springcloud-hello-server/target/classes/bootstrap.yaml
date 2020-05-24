@@ -17,6 +17,17 @@ spring:
     password: password
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    database: 0
+    port: 6379
+    host: 127.0.0.1
+    lettuce:
+      pool:
+        max-idle: 8
+        min-idle: 1
+        max-active: 10
+        max-wait: 1000
+    timeout: 1000
 
 
 mybatis:

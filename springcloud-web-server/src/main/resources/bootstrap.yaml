@@ -8,6 +8,7 @@ spring:
 
 eureka:
   client:
+    registerWithEureka: false
     serviceUrl:
       #      指定服务注册中心的地址
       defaultZone: http://localhost:8061/eureka/
