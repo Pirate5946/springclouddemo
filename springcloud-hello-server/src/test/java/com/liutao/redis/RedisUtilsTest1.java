@@ -1,7 +1,8 @@
 package com.liutao.redis;
 
 import com.liutao.HelloApp;
-import org.junit.jupiter.api.Test;
+
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.redisson.Redisson;
 import org.redisson.api.RBucket;

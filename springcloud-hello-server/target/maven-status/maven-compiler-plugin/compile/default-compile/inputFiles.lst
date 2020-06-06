@@ -1,7 +1,11 @@
 /Users/apple/apps/demo/springclouddemo/springcloud-hello-server/src/main/java/com/liutao/api/impl/EmployeesServiceImpl.java
 /Users/apple/apps/demo/springclouddemo/springcloud-hello-server/src/main/java/com/liutao/controller/EmployeesController.java
+/Users/apple/apps/demo/springclouddemo/springcloud-hello-server/src/main/java/com/liutao/redis/RedissonTest.java
+/Users/apple/apps/demo/springclouddemo/springcloud-hello-server/src/main/java/com/liutao/redis/RedisTemplateUtils.java
 /Users/apple/apps/demo/springclouddemo/springcloud-hello-server/src/main/java/com/liutao/api/EmployeesService.java
 /Users/apple/apps/demo/springclouddemo/springcloud-hello-server/src/main/java/com/liutao/HelloApp.java
+/Users/apple/apps/demo/springclouddemo/springcloud-hello-server/src/main/java/com/liutao/redis/RedisUtils.java
 /Users/apple/apps/demo/springclouddemo/springcloud-hello-server/src/main/java/com/liutao/api/HelloServiceImpl.java
+/Users/apple/apps/demo/springclouddemo/springcloud-hello-server/src/main/java/com/liutao/config/RedisConfig.java
 /Users/apple/apps/demo/springclouddemo/springcloud-hello-server/src/main/java/com/liutao/dao/EmployeesDao.java
 /Users/apple/apps/demo/springclouddemo/springcloud-hello-server/src/main/java/com/liutao/entity/Employees.java

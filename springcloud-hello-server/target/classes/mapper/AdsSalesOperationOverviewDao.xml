@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liutao.dao.AdsSalesOperationOverviewMapper">
+
+    <resultMap type="com.liutao.entity.AdsSalesOperationOverview" id="AdsSalesOperationOverviewMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="examSeasonName" column="exam_season_name" jdbcType="VARCHAR"/>
+        <result property="department" column="department" jdbcType="VARCHAR"/>
+        <result property="examSeasonNameCode" column="exam_season_name_code" jdbcType="INTEGER"/>
+        <result property="orderPeople" column="order_people" jdbcType="INTEGER"/>
+        <result property="incomeAmount" column="income_amount" jdbcType="NUMERIC"/>
+        <result property="guestUnitPrice" column="guest_unit_price" jdbcType="NUMERIC"/>
+        <result property="dtDate" column="dt_date" jdbcType="INTEGER"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="AdsSalesOperationOverviewMap">
+        select
+          id, exam_season_name, department, exam_season_name_code, order_people, income_amount, guest_unit_price, dt_date, update_time
+        from data_report.ads_sales_operation_overview
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="AdsSalesOperationOverviewMap">
+        select
+          id, exam_season_name, department, exam_season_name_code, order_people, income_amount, guest_unit_price, dt_date, update_time
+        from data_report.ads_sales_operation_overview
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="AdsSalesOperationOverviewMap">
+        select
+          id, exam_season_name, department, exam_season_name_code, order_people, income_amount, guest_unit_price, dt_date, update_time
+        from data_report.ads_sales_operation_overview
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="examSeasonName != null and examSeasonName != ''">
+                and exam_season_name = #{examSeasonName}
+            </if>
+            <if test="department != null and department != ''">
+                and department = #{department}
+            </if>
+            <if test="examSeasonNameCode != null">
+                and exam_season_name_code = #{examSeasonNameCode}
+            </if>
+            <if test="orderPeople != null">
+                and order_people = #{orderPeople}
+            </if>
+            <if test="incomeAmount != null">
+                and income_amount = #{incomeAmount}
+            </if>
+            <if test="guestUnitPrice != null">
+                and guest_unit_price = #{guestUnitPrice}
+            </if>
+            <if test="dtDate != null">
+                and dt_date = #{dtDate}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into data_report.ads_sales_operation_overview(exam_season_name, department, exam_season_name_code, order_people, income_amount, guest_unit_price, dt_date, update_time)
+        values (#{examSeasonName}, #{department}, #{examSeasonNameCode}, #{orderPeople}, #{incomeAmount}, #{guestUnitPrice}, #{dtDate}, #{updateTime})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update data_report.ads_sales_operation_overview
+        <set>
+            <if test="examSeasonName != null and examSeasonName != ''">
+                exam_season_name = #{examSeasonName},
+            </if>
+            <if test="department != null and department != ''">
+                department = #{department},
+            </if>
+            <if test="examSeasonNameCode != null">
+                exam_season_name_code = #{examSeasonNameCode},
+            </if>
+            <if test="orderPeople != null">
+                order_people = #{orderPeople},
+            </if>
+            <if test="incomeAmount != null">
+                income_amount = #{incomeAmount},
+            </if>
+            <if test="guestUnitPrice != null">
+                guest_unit_price = #{guestUnitPrice},
+            </if>
+            <if test="dtDate != null">
+                dt_date = #{dtDate},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from data_report.ads_sales_operation_overview where id = #{id}
+    </delete>
+
+</mapper>
