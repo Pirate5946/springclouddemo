@@ -12,7 +12,8 @@ spring:
     # 服务与服务之间相互调用一般都是根据这个name 。
     name: springcloud-hello-server
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8
+    //url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://127.0.0.1:3306/litter_cute_holiday_fund?useUnicode=true&characterEncoding=UTF-8
     username: root
     password: password
     type: com.alibaba.druid.pool.DruidDataSource
@@ -31,7 +32,7 @@ spring:
 
 
 mybatis:
-  mapper-locations: classpath:/mapper/*Dao.xml
+  mapper-locations: classpath:/mapper/*.xml
   typeAliasesPackage: com.liuato.entity
 
 

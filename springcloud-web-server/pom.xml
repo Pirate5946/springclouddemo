@@ -80,6 +80,19 @@
         <!-- jaxb模块引用 - end -->
 
 
+        <!-- mysql -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.47</version>
+        </dependency>
+
+        <!--阿里巴巴连接池-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.0.9</version>
+        </dependency>
 
     </dependencies>
 

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @EnableEurekaClient
 @RestController
-@MapperScan(basePackages = "com.liutao.dao")
+@MapperScan(basePackages = {"com.liutao.dao", "com.liutao.mapper"})
 @EnableFeignClients(basePackages={"com.liutao"})
 public class HelloApp {
 
