@@ -6,6 +6,7 @@
         <result property="id" column="id" jdbcType="INTEGER"/>
         <result property="eventDate" column="event_date" jdbcType="VARCHAR"/>
         <result property="eventDesc" column="event_desc" jdbcType="VARCHAR"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
         <result property="eventMoney" column="event_money" jdbcType="INTEGER"/>
         <result property="total" column="total" jdbcType="INTEGER"/>
         <result property="ts" column="ts" jdbcType="TIMESTAMP"/>
@@ -14,7 +15,7 @@
     <!--查询单个-->
     <select id="queryById" resultMap="HolidayFundMap">
         select
-          id, event_date, event_desc, event_money, total, ts
+          id, event_date, event_desc, event_money, total, ts, remark
         from holiday_fund
         where id = #{id}
     </select>
@@ -22,7 +23,7 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="HolidayFundMap">
         select
-          id, event_date, event_desc, event_money, total, ts
+          id, event_date, event_desc, event_money, total, ts, remark
         from holiday_fund
         limit #{offset}, #{limit}
     </select>
@@ -30,7 +31,7 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="HolidayFundMap">
         select
-        id, event_date, event_desc, event_money, total, ts
+        id, event_date, event_desc, event_money, total, ts, remark
         from holiday_fund
         <where>
             <if test="id != null">
@@ -52,6 +53,7 @@
                 and ts = #{ts}
             </if>
         </where>
+        order by id desc
     </select>
     <select id="queryLast" resultType="com.liutao.entity.HolidayFund">
         select * from holiday_fund where id = (select max(id) from holiday_fund);
@@ -60,8 +62,8 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="id" useGeneratedKeys="true">
-        insert into litter_cute_holiday_fund.holiday_fund(event_date, event_desc, event_money, total, ts)
-        values (#{eventDate}, #{eventDesc}, #{eventMoney}, #{total}, #{ts})
+        insert into litter_cute_holiday_fund.holiday_fund(event_date, event_desc, event_money, total, ts, remark)
+        values (#{eventDate}, #{eventDesc}, #{eventMoney}, #{total}, #{ts}, #{remark})
     </insert>
 
     <!--通过主键修改数据-->

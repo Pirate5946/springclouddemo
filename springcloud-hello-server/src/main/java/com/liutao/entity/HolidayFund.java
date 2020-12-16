@@ -1,5 +1,6 @@
 package com.liutao.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -47,10 +48,14 @@ public class HolidayFund implements Serializable {
     @ApiModelProperty("金额总计")
     private Integer total;
 
+    @ApiModelProperty("备注")
+    private String remark;
+
     /**
      * ts.
      */
     @ApiModelProperty("ts")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss" ,timezone = "GMT+8")
     private Date ts;
 
 }
